@@ -18,10 +18,13 @@ class TestReservation(unittest.TestCase):
         Returns:
             None
         """
-        self.db_path = 'hotels.json'
+        self.hotels_db_path = 'hotels.json'
+        self.customers_db_path = 'customers.json'
 
         # cleanup the file before the test
-        with open(self.db_path, 'w', encoding='utf-8') as file:
+        with open(self.hotels_db_path, 'w', encoding='utf-8') as file:
+            file.write('{}')
+        with open(self.customers_db_path, 'w', encoding='utf-8') as file:
             file.write('{}')
 
         self.hotel = Hotel()
@@ -31,7 +34,10 @@ class TestReservation(unittest.TestCase):
 
     def tearDown(self):
         """Cleanup the file after the test"""
-        with open(self.db_path, 'w', encoding='utf-8') as file:
+        with open(self.hotels_db_path, 'w', encoding='utf-8') as file:
+            file.write('{}')
+
+        with open(self.customers_db_path, 'w', encoding='utf-8') as file:
             file.write('{}')
 
     def test_room_already_reserved_raises_exception(self):
