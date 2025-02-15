@@ -18,10 +18,10 @@ def main():
 
     h1.reserve_room(231, customer=c1)
 
-    h1.cancel_reservation(231, customer=c1)
+    # h1.cancel_reservation(231, customer=c1)
 
-    h1.delete()
-    c1.delete()
+    # h1.delete()
+    # c1.delete()
 
 
 if __name__ == '__main__':
